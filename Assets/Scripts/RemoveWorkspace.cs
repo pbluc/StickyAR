@@ -20,6 +20,25 @@ public class RemoveWorkspace : MonoBehaviour
     void Update()
     {
         placedWorkspaces = GameObject.FindGameObjectsWithTag("Wall Workspace");
+
+        foreach (GameObject wallWorkspace in placedWorkspaces)
+        {
+            string workspaceID = wallWorkspace.name.Substring(15);
+            GameObject stickyNoteWorkspaceConfig = GameObject.Find("Configuration " + workspaceID);
+            
+            //Scale Note Icons on the Minimap
+            if (stickyNoteWorkspaceConfig != null)
+            {
+                Transform[] allChildren = stickyNoteWorkspaceConfig.GetComponentsInChildren<Transform>();
+    
+                foreach (Transform child in allChildren)
+                {
+                   GameObject icon = child.gameObject.transform.Find("noteIcon").gameObject;
+                   icon.gameObject.transform.localScale = new Vector3(10/allChildren.Length, 10/allChildren.Length, 10/allChildren.Length);
+                }
+            }
+        }
+
     }
 
     public void DeleteWorkspace()

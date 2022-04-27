@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2609141869066251302}
   m_Layer: 6
   m_Name: noteIcon
-  m_TagString: Untagged
+  m_TagString: noteIcon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 4457846608013932631}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6625022964945754257
 MeshFilter:
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 4457846608013932626}
   m_Layer: 0
   m_Name: StickyNote
-  m_TagString: Note
+  m_TagString: Sticky Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,8 +190,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -1.812}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
-  - {fileID: 4457846609825505253}
   - {fileID: 4298473292065837549}
+  - {fileID: 4457846609825505253}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -290,7 +290,7 @@ RectTransform:
   m_Children:
   - {fileID: 4457846607970964071}
   m_Father: {fileID: 4457846608013932631}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
