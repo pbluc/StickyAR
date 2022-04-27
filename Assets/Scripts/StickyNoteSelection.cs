@@ -40,12 +40,17 @@ public class StickyNoteSelection : MonoBehaviour
                             selectedCount -= 1;
                             // Removes highlight outline on sticky note prefab instance 
                             tappedStickyNote.GetComponent<Outline>().enabled = false;
+                            
+                            GameObject icon = tappedStickyNote.transform.Find("noteIcon").gameObject;
+                            icon.GetComponent<Renderer> ().material.color = Color.red;
                         }
                         else
                         {
                             selectedCount += 1;
                             // Adds highlight outline on sticky note prefab instance 
                             tappedStickyNote.GetComponent<Outline>().enabled = true;
+                            GameObject icon = tappedStickyNote.transform.Find("noteIcon").gameObject;
+                            icon.GetComponent<Renderer> ().material.color = Color.yellow;
                         }
                     }
                 }

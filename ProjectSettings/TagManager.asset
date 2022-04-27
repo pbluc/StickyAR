@@ -8,6 +8,7 @@ TagManager:
   - Sticky Note
   - Note
   - MinimapCamera
+  - noteIcon
   layers:
   - Default
   - TransparentFX
