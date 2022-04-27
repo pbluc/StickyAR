@@ -1,0 +1,128 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EnterStickyNoteMode : MonoBehaviour
+{
+    private Camera mainARCamera;
+
+    public RawImage icon;
+
+    public Texture highlightedIconTexture;
+    public Texture unhighlightedIconTexture;
+
+    public bool inStickyNoteMode = false;
+
+    public GameObject stickyNotePrefab;
+    public GameObject acceptButton;
+    public GameObject deleteWorkspaceButton;
+    public GameObject detectWallsButton;
+    public GameObject verticalWallDetection;
+    public GameObject workspaceSelection;
+    public GameObject openNote;
+    public GameObject deleteNoteButton;
+
+    private DetectVerticalWallsWithRectangles verticalWallDetectionScript;
+    private WorkspaceSelection workspaceSelectionScript;
+
+    void Awake()
+    {
+        mainARCamera = Camera.main;
+
+        verticalWallDetectionScript = verticalWallDetection.GetComponent<DetectVerticalWallsWithRectangles>();
+        workspaceSelectionScript = workspaceSelection.GetComponent<WorkspaceSelection>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (inStickyNoteMode)
+        {
+            // Check to see if user taps on a workspace
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                Ray raycast = mainARCamera.ScreenPointToRay(Input.GetTouch(0).position);
+                RaycastHit raycastHit;
+                bool isOverUI = UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
+                if (Physics.Raycast(raycast, out raycastHit) && !isOverUI)
+                {
+                    // if (raycastHit.collider.tag == "Wall Workspace")
+                    // {
+                    //     GameObject tappedWorkspace = raycastHit.collider.gameObject;
+                    //     string workspaceID = tappedWorkspace.name.Substring(15);
+                    //     // Finds and assigns the child named "Configuration"
+                    //     GameObject stickyNoteWorkspaceConfig = GameObject.Find("Configuration " + workspaceID);
+
+                    //     // If the child was not found
+                    //     if (stickyNoteWorkspaceConfig == null)
+                    //     {
+                    //         // Create the child
+                    //         stickyNoteWorkspaceConfig = new GameObject("Configuration " + workspaceID);
+                    //         stickyNoteWorkspaceConfig.transform.position = tappedWorkspace.transform.position;
+                    //     }
+                        // // Adds cube (place holder for sticky note) on the tapped workspace
+                        // GameObject addedStickyNote = (GameObject)Instantiate(stickyNotePrefab, raycastHit.point, Quaternion.identity);
+                        // addedStickyNote.transform.parent = stickyNoteWorkspaceConfig.transform;
+                    // }
+
+                    // ============
+                    // Change Texture
+                    /*else {
+                        Debug.Log("Change Texture");
+                        GameObject tappedNote = raycastHit.collider.gameObject;
+                        tappedNote.GetComponent<Outline>().enabled = true;
+                    }*/
+                }
+            }
+        }
+    }
+
+    public void activateNote(){
+        OpenNote.inStickyNoteMode = true;
+        openNote.SetActive(true);
+    }
+
+    public void ToggleStickyNoteInteractionMode()
+    {
+        if (inStickyNoteMode)
+        {
+            inStickyNoteMode = false;
+            icon.texture = unhighlightedIconTexture;
+
+            workspaceSelectionScript.canSelectWorkspaces = true;
+
+            detectWallsButton.SetActive(true);
+            deleteNoteButton.SetActive(false);
+            openNote.SetActive(false);
+            OpenNote.inStickyNoteMode = false;
+
+        } else
+        {
+            inStickyNoteMode = true;
+            icon.texture = highlightedIconTexture;
+
+            verticalWallDetectionScript.keepSearchingForVerticalSurfaces = false;
+            workspaceSelectionScript.canSelectWorkspaces = false;
+
+            acceptButton.SetActive(false);
+            deleteWorkspaceButton.SetActive(false);
+            detectWallsButton.SetActive(false);
+
+            // Unhighlight all placed workspaces
+            UnhighlightAllWorkspaces();
+        }
+    }
+
+    private void UnhighlightAllWorkspaces()
+    {
+        GameObject[] placedWorkspaces = GameObject.FindGameObjectsWithTag("Wall Workspace");
+
+        foreach (GameObject wallWorkspace in placedWorkspaces)
+        {
+            wallWorkspace.GetComponent<Outline>().enabled = false;
+        }
+
+        workspaceSelectionScript.selectedCount = 0;
+    }
+}
