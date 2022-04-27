@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2306,6 +2306,7 @@ MonoBehaviour:
   acceptButton: {fileID: 1380718136}
   wallIndicator: {fileID: 1193981545}
   wallWorkspacePrefab: {fileID: 484855267663269949, guid: 0ac88e7fac4f5214bb26ee884ad1b09a, type: 3}
+  arPlaneManager: {fileID: 737128930}
   raycastManager: {fileID: 737128933}
   arOrigin: {fileID: 737128931}
   mainARCamera: {fileID: 2063653728}

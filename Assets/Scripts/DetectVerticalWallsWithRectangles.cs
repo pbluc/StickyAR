@@ -13,6 +13,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
     public GameObject wallIndicator;
     public GameObject wallWorkspacePrefab;
 
+    public ARPlaneManager arPlaneManager;
     public ARRaycastManager raycastManager;
     public ARSessionOrigin arOrigin;
 
@@ -24,6 +25,11 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
     public bool keepSearchingForVerticalSurfaces = true;
 
     public static int numWorkspaces = 1;
+
+    void Start()
+    {
+        arPlaneManager.requestedDetectionMode = PlaneDetectionMode.Vertical;
+    }
 
     void Update()
     {
