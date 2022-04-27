@@ -7,13 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2609141869066251302, guid: 06f078b4931bc48f59c9b36335f0b294, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609141869066251302, guid: 06f078b4931bc48f59c9b36335f0b294, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609141869066251302, guid: 06f078b4931bc48f59c9b36335f0b294, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4457846607970964070, guid: 06f078b4931bc48f59c9b36335f0b294, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4457846608013932627, guid: 06f078b4931bc48f59c9b36335f0b294, type: 3}
       propertyPath: m_Name
-      value: StickyNote (1)
+      value: StickyNote (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4457846608013932631, guid: 06f078b4931bc48f59c9b36335f0b294, type: 3}
       propertyPath: m_RootOrder
