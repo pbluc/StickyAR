@@ -74,7 +74,7 @@ public class VerticalWallLoader : MonoBehaviour
 
                     // Resizes the wall workspace indicator to fit the size and dimensions of the AR Plane being detected
                     Vector2 wallPlaneSize = wallPlane.size;
-                    Vector3 wallScale = new Vector3(wallPlaneSize.x, 1f, wallPlaneSize.z);
+                    Vector3 wallScale = new Vector3(wallPlaneSize.x, 1f, wallPlaneSize.y);
 
                     // Place new workspace and keep detecting vertical surfaces until user has chosen all workspaces
                     wallWorkspace.SetActive(true);
