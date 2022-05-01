@@ -78,11 +78,6 @@ public class EnterStickyNoteMode : MonoBehaviour
         }
     }
 
-    public void activateNote(){
-        OpenNote.inStickyNoteMode = true;
-        openNote.SetActive(true);
-    }
-
     public void ToggleStickyNoteInteractionMode()
     {
         if (inStickyNoteMode)
@@ -108,6 +103,8 @@ public class EnterStickyNoteMode : MonoBehaviour
             acceptButton.SetActive(false);
             deleteWorkspaceButton.SetActive(false);
             detectWallsButton.SetActive(false);
+            openNote.SetActive(true);
+            OpenNote.inStickyNoteMode = true;
 
             // Unhighlight all placed workspaces
             UnhighlightAllWorkspaces();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlanePrefab: {fileID: 0}
-  m_DetectionMode: 3
+  m_DetectionMode: 2
 --- !u!114 &737128931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,18 +1686,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1370525887}
-        m_TargetAssemblyTypeName: EnterStickyNoteMode, Assembly-CSharp
-        m_MethodName: activateNote
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1370525885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1756,7 +1744,7 @@ MonoBehaviour:
   verticalWallDetection: {fileID: 1597153328}
   workspaceSelection: {fileID: 1764327601}
   openNote: {fileID: 1237870428}
-  deleteNoteButton: {fileID: 0}
+  deleteNoteButton: {fileID: 507938706}
 --- !u!1 &1370639140
 GameObject:
   m_ObjectHideFlags: 0

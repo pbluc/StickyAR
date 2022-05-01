@@ -38,6 +38,10 @@ public class OpenNote : MonoBehaviour
         arCamera = Camera.main;
     }
 
+    private void Start() {
+        stickyNotePrefab.tag = "Sticky Note";
+    }
+
     // Create new note infront of camera 
     public void addNewNote(){
         if(inStickyNoteMode)
@@ -68,7 +72,7 @@ public class OpenNote : MonoBehaviour
         addedStickyNote.tag = "Sticky Note";
         addedStickyNote.name = "NewNote" + ID;
         addedStickyNote.transform.parent = workspace.transform;
-        // addedStickyNote.transform.position = new Vector3(pos.x, pos.y, pos.z-0.015f);
+        addedStickyNote.transform.position = new Vector3(pos.x, pos.y, pos.z-0.015f);
         addedStickyNote.transform.rotation = currentSelectedNote.transform.rotation;
         currentSelectedNote.SetActive(false);
         currentSelectedNote = null;
