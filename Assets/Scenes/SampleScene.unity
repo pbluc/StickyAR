@@ -1200,6 +1200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StickyNote
       objectReference: {fileID: 0}
+    - target: {fileID: 7115498699847772549, guid: 0ed79ffe7ff3242f39e499d675891fb6, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ed79ffe7ff3242f39e499d675891fb6, type: 3}
 --- !u!1 &866749501 stripped
