@@ -113,7 +113,7 @@ public class OpenNote : MonoBehaviour
                             stickyNoteWorkspaceConfig = new GameObject("Configuration " + workspaceID);
                             stickyNoteWorkspaceConfig.transform.position = tappedWorkspace.transform.position;
                         }
-                        // Adds cube (place holder for sticky note) on the tapped workspace
+                        // Adds sticky note on the tapped workspace
                         placeNote(raycastHit.point, stickyNoteWorkspaceConfig, workspaceID);
                     }
                 }
