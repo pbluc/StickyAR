@@ -93,6 +93,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
 
         // Checks to see if we've detected any planes 
         wallPoseIsValid = hits.Count > 0;
+    
         if (wallPoseIsValid)
         {
             // Retrieves the first plane trackable detected
