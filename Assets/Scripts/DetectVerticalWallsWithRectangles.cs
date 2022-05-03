@@ -50,7 +50,8 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
                     {
                         acceptButton.SetActive(true);
                         // Place workspace and keep detecting vertical surfaces until user has chosen all workspaces
-                        GameObject addedWorkspace = (GameObject) Instantiate(wallWorkspacePrefab);
+                        GameObject addedWorkspace = (GameObject) Instantiate(wallWorkspacePrefab, wallIndicator.transform.position, wallIndicator.transform.rotation);
+                        addedWorkspace.transform.localScale = wallIndicator.transform.localScale;
                         addedWorkspace.name = "Wall Workspace " + numWorkspaces;
                         addedWorkspace.transform.GetChild(1).name = addedWorkspace.GetInstanceID().ToString();
                         numWorkspaces += 1;
@@ -75,7 +76,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
             Quaternion wallPoseRotation = Quaternion.Euler(wallPoseEulerAngles);
 
             wallIndicator.transform.SetPositionAndRotation(wallPose.position, wallPoseRotation);
-            wallWorkspacePrefab.transform.SetPositionAndRotation(wallIndicator.transform.position, wallIndicator.transform.rotation);
+            //wallWorkspacePrefab.transform.SetPositionAndRotation(wallIndicator.transform.position, wallIndicator.transform.rotation);
         } else
         {
             // If no valid vertical surface found, makes wall workspace indicator invisible 
@@ -110,7 +111,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
                 Vector3 wallScale = new Vector3(wallPlaneSize.x, 1f, wallPlaneSize.y);
 
                 wallIndicator.transform.localScale = wallScale * 0.1f;
-                wallWorkspacePrefab.transform.localScale = wallIndicator.transform.localScale;
+                //wallWorkspacePrefab.transform.localScale = wallIndicator.transform.localScale;
             } else
             {
                 wallPoseIsValid = false;

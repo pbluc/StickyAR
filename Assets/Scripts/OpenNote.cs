@@ -60,7 +60,7 @@ public class OpenNote : MonoBehaviour
     // Open phone keyboard 
     void inputText(){
         if(currentSelectedNote != null){
-            keyboard = TouchScreenKeyboard.Open(keyboardText);
+            keyboard = TouchScreenKeyboard.Open(keyboardText, TouchScreenKeyboardType.Default);
             keyboard.active = true;
             Debug.Log("Opened Keyboard");
         }
