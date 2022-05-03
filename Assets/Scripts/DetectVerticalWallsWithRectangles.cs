@@ -97,17 +97,23 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
         {
             // Retrieves the first plane trackable detected
             ARRaycastHit firstHit = hits[0];
+            ARPlane wallPlane = (ARPlane)firstHit.trackable;
 
-            // Sets the pose of the wall workspace indicator to that of the first plane trackable hit
-            wallPose = firstHit.pose;
+            if (wallPlane.alignment == PlaneAlignment.Vertical)
+            {
+                // Sets the pose of the wall workspace indicator to that of the first plane trackable hit
+                wallPose = firstHit.pose;
 
-            // Resizes the wall workspace indicator to fit the size and dimensions of the AR Plane being detected
-            ARPlane wallPlane = (ARPlane) firstHit.trackable;
-            Vector2 wallPlaneSize = wallPlane.size;
-            Vector3 wallScale = new Vector3(wallPlaneSize.x, 1f, wallPlaneSize.y);
+                // Resizes the wall workspace indicator to fit the size and dimensions of the AR Plane being detected
+                Vector2 wallPlaneSize = wallPlane.size;
+                Vector3 wallScale = new Vector3(wallPlaneSize.x, 1f, wallPlaneSize.y);
 
-            wallIndicator.transform.localScale = wallScale * 0.1f;
-            wallWorkspacePrefab.transform.localScale = wallIndicator.transform.localScale;
+                wallIndicator.transform.localScale = wallScale * 0.1f;
+                wallWorkspacePrefab.transform.localScale = wallIndicator.transform.localScale;
+            } else
+            {
+                wallPoseIsValid = false;
+            }
         }
     }
 
