@@ -52,6 +52,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
                         // Place workspace and keep detecting vertical surfaces until user has chosen all workspaces
                         GameObject addedWorkspace = (GameObject) Instantiate(wallWorkspacePrefab);
                         addedWorkspace.name = "Wall Workspace " + numWorkspaces;
+                        addedWorkspace.transform.GetChild(1).name = addedWorkspace.GetInstanceID().ToString();
                         numWorkspaces += 1;
                     }
                 }
