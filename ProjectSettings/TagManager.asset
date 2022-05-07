@@ -9,6 +9,7 @@ TagManager:
   - Note
   - MinimapCamera
   - noteIcon
+  - WorkspaceIcon
   layers:
   - Default
   - TransparentFX
