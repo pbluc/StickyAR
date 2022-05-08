@@ -54,7 +54,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
                         addedWorkspace.transform.localScale = wallIndicator.transform.localScale;
                         addedWorkspace.name = "Wall Workspace " + numWorkspaces;
                         addedWorkspace.transform.GetChild(1).name = addedWorkspace.GetInstanceID().ToString();
-                        addedWorkspace.transform.GetChild(3).name = DateTime.Now.ToString("MM dd yyyy"); ;
+                        addedWorkspace.transform.GetChild(2).name = DateTime.Now.ToString("MM dd yyyy"); ;
                         numWorkspaces += 1;
                     }
                 }
@@ -78,7 +78,6 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
 
             //wallIndicator.transform.SetPositionAndRotation(wallPose.position, wallPoseRotation);
             wallIndicator.transform.position = wallPose.position;
-            
             wallIndicator.transform.rotation = wallPoseRotation;
             //wallWorkspacePrefab.transform.SetPositionAndRotation(wallIndicator.transform.position, wallIndicator.transform.rotation);
         } else
@@ -103,7 +102,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
         {
             // Retrieves the first plane trackable detected
             ARRaycastHit firstHit = hits[0];
-            ARPlane wallPlane = (ARPlane) firstHit.trackable;
+            ARPlane wallPlane = (ARPlane)firstHit.trackable;
 
             if (wallPlane.alignment == PlaneAlignment.Vertical)
             {
