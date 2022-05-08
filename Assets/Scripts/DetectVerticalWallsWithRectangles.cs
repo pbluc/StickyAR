@@ -76,7 +76,9 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
             wallPoseEulerAngles.x = 0f;
             Quaternion wallPoseRotation = Quaternion.Euler(wallPoseEulerAngles);
 
-            wallIndicator.transform.SetPositionAndRotation(wallPose.position, wallPoseRotation);
+            //wallIndicator.transform.SetPositionAndRotation(wallPose.position, wallPoseRotation);
+            wallIndicator.transform.position = wallPose.position;
+            wallIndicator.transform.rotation = wallPoseRotation;
             //wallWorkspacePrefab.transform.SetPositionAndRotation(wallIndicator.transform.position, wallIndicator.transform.rotation);
         } else
         {
