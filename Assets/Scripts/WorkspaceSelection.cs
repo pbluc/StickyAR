@@ -40,12 +40,16 @@ public class WorkspaceSelection : MonoBehaviour
                             selectedCount -= 1;
                             // Removes highlight outline on workspace prefab instance 
                             tappedWorkspace.GetComponent<Outline>().enabled = false;
+                            GameObject icon = tappedWorkspace.transform.Find("WorkspaceIcon").gameObject;
+                            icon.GetComponent<Renderer> ().material.color = Color.blue;
                         }
                         else
                         {
                             selectedCount += 1;
                             // Adds highlight outline on workspace prefab instance 
                             tappedWorkspace.GetComponent<Outline>().enabled = true;
+                            GameObject icon = tappedWorkspace.transform.Find("WorkspaceIcon").gameObject;
+                            icon.GetComponent<Renderer> ().material.color = Color.magenta;
                         }
                     }
                 }
