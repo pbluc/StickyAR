@@ -54,6 +54,7 @@ public class DetectVerticalWallsWithRectangles : MonoBehaviour
                         addedWorkspace.transform.localScale = wallIndicator.transform.localScale;
                         addedWorkspace.name = "Wall Workspace " + numWorkspaces;
                         addedWorkspace.transform.GetChild(1).name = addedWorkspace.GetInstanceID().ToString();
+                        addedWorkspace.transform.GetChild(2).name = DateTime.Now.ToString("MM dd yyyy"); ;
                         numWorkspaces += 1;
                     }
                 }

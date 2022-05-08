@@ -5,20 +5,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class SaveSession : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // Write current session information to mobile device
     public void SaveCurrentSession()
@@ -35,14 +25,12 @@ public class SaveSession : MonoBehaviour
             string createText = fileContents + Environment.NewLine;
             // Write contents containing information about session to file
             File.WriteAllText(path, createText);
-        }
 
-        // Append some extra text
-        string appendText = "This is extra text" + Environment.NewLine;
-        File.AppendAllText(path, appendText);
+            // TODO: Display confirmation of session having been saved
+        }
     }
 
-    public string LoadFileContents()
+    private string LoadFileContents()
     {
         string contents = "";
 
@@ -61,7 +49,7 @@ public class SaveSession : MonoBehaviour
                 int numStickyNotes = stickyNoteWorkspaceConfig.transform.childCount;
                 if (numStickyNotes > 0)
                 {
-                    // TODO: Add workspace information to file contents
+                    // Add workspace information to file contents
 
                     // Write the unique ID of the workspace
                     contents += workspace.transform.GetChild(1).name + Environment.NewLine;
@@ -76,22 +64,27 @@ public class SaveSession : MonoBehaviour
                         contents += workspace.transform.GetChild(0).name + Environment.NewLine;
                     }
 
-                    // TODO: Write creation date of workspace
+                    // Write creation date of workspace
+                    contents += workspace.transform.GetChild(2).name + Environment.NewLine;
 
+
+                    // Write information about the sticky notes
                     for (int i = 0; i < numStickyNotes; i++)
                     {
                         GameObject stickyNote = stickyNoteWorkspaceConfig.transform.GetChild(i).gameObject;
-
+                        // Write the position, rotation, and localScale of sticky note to contents
                         contents += stickyNote.transform.position.ToString() + Environment.NewLine;
                         contents += stickyNote.transform.rotation.ToString() + Environment.NewLine;
                         contents += stickyNote.transform.localScale.ToString() + Environment.NewLine;
-
-                        // TODO: Write material and text of sticky note to contents
+                        // Write the name of the material on sticky note to contents
+                        contents += stickyNote.GetComponent<Renderer>().material.name + Environment.NewLine;
+                        // Write text of sticky note to contents
+                        Text stickyNoteText = stickyNote.transform.Find("StickyNoteCanvas/StickyNoteText").gameObject.GetComponent<Text>();
+                        contents += stickyNoteText.text + Environment.NewLine;
                     }
 
                 }
             }
-
             contents += "###" + Environment.NewLine;
         }
         return contents;
