@@ -19,15 +19,11 @@ public class SaveSession : MonoBehaviour
         // Information about the session
         string fileContents = LoadFileContents();
 
-        // Create file if it doesn't exist
-        if (!File.Exists(path))
-        {
-            string createText = fileContents + Environment.NewLine;
-            // Write contents containing information about session to file
-            File.WriteAllText(path, createText);
+        string createText = fileContents + Environment.NewLine;
+        // Write contents containing information about session to file
+        File.WriteAllText(path, createText);
 
-            // TODO: Display confirmation of session having been saved
-        }
+        // TODO: Display confirmation of session having been saved
     }
 
     private string LoadFileContents()
@@ -67,6 +63,8 @@ public class SaveSession : MonoBehaviour
                     // Write creation date of workspace
                     contents += workspace.transform.GetChild(2).name + Environment.NewLine;
 
+                    // Write number of sticky notes on workspace
+                    contents += numStickyNotes + Environment.NewLine;
 
                     // Write information about the sticky notes
                     for (int i = 0; i < numStickyNotes; i++)
@@ -85,7 +83,6 @@ public class SaveSession : MonoBehaviour
 
                 }
             }
-            contents += "###" + Environment.NewLine;
         }
         return contents;
     }
