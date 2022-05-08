@@ -61,7 +61,7 @@ public class SaveSession : MonoBehaviour
                     }
 
                     // Write creation date of workspace
-                    contents += workspace.transform.GetChild(2).name + Environment.NewLine;
+                    contents += workspace.transform.GetChild(3).name + Environment.NewLine;
 
                     // Write number of sticky notes on workspace
                     contents += numStickyNotes + Environment.NewLine;
