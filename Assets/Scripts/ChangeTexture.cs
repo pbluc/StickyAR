@@ -10,6 +10,8 @@ public class ChangeTexture : MonoBehaviour
 
     private StickyNoteSelection stickyNoteSelectionScript;
 
+    public Material Material;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,14 +31,8 @@ public class ChangeTexture : MonoBehaviour
             bool selected = stickyNote.GetComponent<Outline>().enabled;
             if (selected)
             {
-                string stickyNoteID = stickyNote.name.Substring(15);
-                GameObject stickyNoteConfig = GameObject.Find("Configuration " + stickyNoteID);
-
-                if (stickyNoteConfig != null)
-                {
-                    Destroy(stickyNoteConfig);
-                }
-                Destroy(stickyNote);
+                stickyNote.GetComponent<MeshRenderer>().material = Material;
+                stickyNote.GetComponent<Outline>().enabled = false;
             }
         }
         stickyNoteSelectionScript.selectedCount = 0;
