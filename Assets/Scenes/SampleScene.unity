@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -789,8 +789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 312.5, y: 800}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 150, y: 650}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507938708
 MonoBehaviour:
@@ -1014,7 +1014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -312.5, y: 450}
+  m_AnchoredPosition: {x: -150, y: 450}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688559278
@@ -1450,7 +1450,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 82.5, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &979795239
 MonoBehaviour:
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: d16482ee5e59f46cf94186abec8b35f0, type: 3}
+  m_Texture: {fileID: 2800000, guid: 58581d9d787eb4b86907c8a3f3e00603, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1523,8 +1523,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 507938708}
-        m_TargetAssemblyTypeName: DeleteNote, Assembly-CSharp
+      - m_Target: {fileID: 1985308841}
+        m_TargetAssemblyTypeName: ToggleDeletedNotes, Assembly-CSharp
         m_MethodName: scrollLeft
         m_Mode: 1
         m_Arguments:
@@ -1579,7 +1579,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -82.5, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &985390589
 MonoBehaviour:
@@ -1601,7 +1601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 2a8825d96bf13484d886d2a5c5cb2c65, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0c12793f9170140689cc6317797f052f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1652,8 +1652,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 507938708}
-        m_TargetAssemblyTypeName: DeleteNote, Assembly-CSharp
+      - m_Target: {fileID: 1985308841}
+        m_TargetAssemblyTypeName: ToggleDeletedNotes, Assembly-CSharp
         m_MethodName: scrollRight
         m_Mode: 1
         m_Arguments:
@@ -1788,7 +1788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -312.5, y: -900}
+  m_AnchoredPosition: {x: -150, y: -700}
   m_SizeDelta: {x: 250, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114040582
@@ -2007,8 +2007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 312.5, y: 500}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 150, y: 450}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237870430
 MonoBehaviour:
@@ -2154,7 +2154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 312.5, y: 230}
+  m_AnchoredPosition: {x: 150, y: 230}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370525884
@@ -2344,7 +2344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -312.5, y: 450}
+  m_AnchoredPosition: {x: -150, y: 450}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380718138
@@ -2965,7 +2965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -312.5, y: -230}
+  m_AnchoredPosition: {x: -150, y: -230}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637705463
@@ -3108,7 +3108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -312.5, y: 230}
+  m_AnchoredPosition: {x: -150, y: 230}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747871510
@@ -3644,7 +3644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -133.73999, y: -69.329956}
+  m_AnchoredPosition: {x: -80, y: -69.329956}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1985308838
@@ -3703,8 +3703,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 507938708}
-        m_TargetAssemblyTypeName: DeleteNote, Assembly-CSharp
+      - m_Target: {fileID: 1985308841}
+        m_TargetAssemblyTypeName: ToggleDeletedNotes, Assembly-CSharp
         m_MethodName: loadDeletedNotes
         m_Mode: 1
         m_Arguments:
@@ -3735,7 +3735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 30014eca7d4254f5d82ae4c17d8dafce, type: 3}
+  m_Texture: {fileID: 2800000, guid: fef0497a21fd1424e82a50394a0bc33e, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3763,11 +3763,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1985308839}
-  restoreButton: {fileID: 2800000, guid: 30014eca7d4254f5d82ae4c17d8dafce, type: 3}
-  acceptButton: {fileID: 2800000, guid: 36845378560c4a641af393278829c5cc, type: 3}
-  DeletedNotesButton: {fileID: 0}
-  leftScrollButton: {fileID: 0}
-  rightScrollButton: {fileID: 0}
+  restoreButton: {fileID: 2800000, guid: fef0497a21fd1424e82a50394a0bc33e, type: 3}
+  acceptButton: {fileID: 2800000, guid: 89474264cb79d465e9c815df6068b2b5, type: 3}
+  DeletedNotesButton: {fileID: 1985308836}
+  leftScrollButton: {fileID: 979795237}
+  rightScrollButton: {fileID: 985390587}
   scrollOn: 0
   currentIndex: 0
   addNoteButton: {fileID: 1237870428}
