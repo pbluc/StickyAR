@@ -1,0 +1,8 @@
+.DS_Store
+Temp
+UserSettings
+Logs
+Library
+Assets/Plugins
+Assets/Plugins.*
+Packages
